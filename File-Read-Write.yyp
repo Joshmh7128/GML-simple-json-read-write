@@ -34,7 +34,9 @@
     "IDEVersion": "2023.11.1.129",
   },
   "resources": [
+    {"id":{"name":"obj_duck","path":"objects/obj_duck/obj_duck.yy",},},
     {"id":{"name":"obj_data","path":"objects/obj_data/obj_data.yy",},},
+    {"id":{"name":"obj_ex","path":"objects/obj_ex/obj_ex.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
   "RoomOrderNodes": [

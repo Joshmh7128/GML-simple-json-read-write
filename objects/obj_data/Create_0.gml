@@ -9,28 +9,28 @@ time = 12;
 
 var file;
 
-// now that we have our file, read and write those stats from the file
+// write data to a file using a DS map
 function write_data()
 {	
 	// create our information data
-	var info_data = ds_map_create();
+	var _info_data = ds_map_create();
 	// add our data
-	ds_map_add(info_data, "hp", hp);
-	ds_map_add(info_data, "spd", spd);
-	ds_map_add(info_data, "time", time);
+	ds_map_add(_info_data, "hp", hp);
+	ds_map_add(_info_data, "spd", spd);
+	ds_map_add(_info_data, "time", time);
 	
 	// data to string
-	var string_data = json_encode(info_data);
+	var _string_data = json_encode(_info_data);
 	
 	show_debug_message("encoded data:");
-	show_debug_message(string_data);
+	show_debug_message(_string_data);
 	
 	// delete the data
-	ds_map_destroy(info_data);
+	ds_map_destroy(_info_data);
 	
 	// write the data to the file
 	var _file = file_text_open_write(path + "data.txt");
-	file_text_write_string(_file, string_data);
+	file_text_write_string(_file, _string_data);
 	file_text_close(_file);
 }
 
