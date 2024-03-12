@@ -1,3 +1,7 @@
+// this is the path we are using
+path = working_directory;
+// path = working_directory;
+
 // our stats
 hp = 10;
 spd = 5;
@@ -25,7 +29,7 @@ function write_data()
 	ds_map_destroy(info_data);
 	
 	// write the data to the file
-	var _file = file_text_open_write(working_directory + "data.txt");
+	var _file = file_text_open_write(path + "data.txt");
 	file_text_write_string(_file, string_data);
 	file_text_close(_file);
 }
@@ -33,7 +37,13 @@ function write_data()
 // read the data
 function read_data()
 {
-	var _file = file_text_open_read(working_directory + "data.txt");
+	if (!file_exists(path + "data.txt"))
+	{
+		show_debug_message("no file detected!");
+		return;
+	}
+	
+	var _file = file_text_open_read(path + "data.txt");
 	// this decodes to a ds map
 	var info = json_decode(file_text_read_string(_file));
 	// set our variables from the ds map
@@ -46,6 +56,6 @@ function read_data()
 	show_debug_message(time);
 }
 
+write_data();
 
 read_data();
-// write_data();
