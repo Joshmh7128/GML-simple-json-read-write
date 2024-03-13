@@ -7,8 +7,6 @@ hp = 10;
 spd = 5;
 time = 12;
 
-var file;
-
 // write data to a file using a DS map
 function write_data()
 {	
